@@ -1,0 +1,8 @@
+Octave Documentation
+http://math.hawaii.edu/lab/197/octave.pdf
+
+About Sturm Liouville
+https://dl.dropboxusercontent.com/u/64229764/epmap2220.pdf
+
+About the implementation
+https://dl.dropboxusercontent.com/u/64229764/map2220/2013/ep_v2.pdf
