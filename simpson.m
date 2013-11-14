@@ -1,5 +1,3 @@
-x = a:((b - a) / n):b;
-
 function integral = simpson(a, b, n, func)
 	h = (b - a)/n;
 	x = a:((b - a) / n):b;
