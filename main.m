@@ -5,22 +5,21 @@
 
 n = 20
 
-% intervalo
-a = 0
-b = pi
-l = b - a
-
 y = inline('(exp(x))*(sin(x))')
 
 
 % implementacao do primeiro item
 
-target_functions
-input_functions_1
+funcao_de_destino()
+funcoes_de_entrada_1()
 simpson(a, b, n, vj)
 
 % implementacao do segundo item
 
-target_functions
-input_functions_1
+funcao_de_destino()
+funcoes_de_entrada_2()
 simpson(a, b, n, vj)
+
+%implementacao do terceiro item
+
+% encontra o valor exato...
