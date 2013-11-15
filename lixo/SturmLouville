@@ -1,0 +1,58 @@
+%EXERCICIO PROGRAMA
+%MAP2220
+%PROBLEMA DE STURM-LIOUVILLE - METODO DE GALERKIN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+n = 20;
+
+a = 0;
+b = pi;
+
+l = b - a;
+
+% Definido os vjs
+
+vj = @(j, x, l) sin((j * pi * x) / l);
+
+dvjdx = @(j, x, l) cos((j * pi * x) / l);
+
+% entrada 1
+p = @(x) 4;
+q = @(x) exp(-x);
+f = @(x) -8 * exp(x) * cos(x) + sin(x);
+
+% entrada 2
+p = @(x) 1 + x ^ 2;
+q = @(x) 2 * x;
+f = @(x) - 2 * (x ^ 2 + x + 1) * exp(x) * cos(x);
+
+
+function x = resolver_sistema(A, b)
+	x = A ^ (-1) * b;
+endfunction
+
+
+function integral = simpson(a, b, n, func)
+	h = (b - a)/n;
+	x = a:((b - a) / n):b;
+
+	func = inline(func);
+	for i = 2:length(x) - 1
+		printf("entrou!");
+		if mod(i, 2) == 0
+			fx(i) = 4 * func(x(i)); 
+		else
+			fx(i) = 2 * func(x(i)); 
+		end 
+	end
+
+	integral = func(x(1)) + func(x(length(x))) + sum(fx);
+
+	integral = h/3 * integral; 
+
+endfunction
+
+
+function plota_graficos
+	$plota os graficos
+endfunction
