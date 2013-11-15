@@ -21,25 +21,28 @@ y = @(x) exp(x)*sin(x);
 function principal(a,b,n,vj,dvjdx,p,q,f)
 	A = func_montar_matriz(a,b,n,vj,dvjdx,p,q);
 	B = func_montar_coeficientes(a,b,n,vj,f);
-	resultado = A / B;
-	x = a:(b-a)/n:1;
-	#n
-	#a
-	#b
-	#vj
-	#dvjdx
-	#p
-	#q
-	#f
-	#resultado
+	resultado = B / A;
 
+	A
+	B
+	n
+	a
+	b
+	vj
+	dvjdx
+	p
+	q
+	f
+	resultado
+	
+	x = a:0.01:b;
 	hold on;
 	plot(x,func_aproximada(resultado,vj,x));
 endfunction
 
 function produto_interno = func_produto_interno(a,b,n,h,k)
 	funcao_a_ser_integrada = @(x) h(x)*k(x);
-	produto_interno = func_simpson(a,b,100,funcao_a_ser_integrada);
+	produto_interno = func_simpson(a,b,n,funcao_a_ser_integrada);
 endfunction
 
 function matriz_normal = func_montar_matriz(a,b,n,vj,dvjdx,p,q)
@@ -87,18 +90,27 @@ function func_plota_graficos(a,b,n,funcao)
 	plot(x,funcao)
 endfunction
 
-printf("*******************************************\n");
+function resultado = func_plot_y(x)
+	for i = 1:length(x)
+		resultado(i) = exp(x(i)) * sin(x(i));
+	end
+endfunction
+
+x = a:0.01:pi;
+plot(x,func_plot_y(x));
+
+printf("\n*******************************************\n");
 printf("************* ENTRADA 1 *******************\n");
 printf("*******************************************\n");
 
 % entrada 1
 p = @(x) 4;
 q = @(x) exp(-x);
-f = @(x) -8 * exp(x) * cos(x) + sin(x);
+f = @(x) - 8 * exp(x) * cos(x) + sin(x);
 
 principal(a,b,n,vj,dvjdx,p,q,f);
 
-printf("*******************************************\n");
+printf("\n*******************************************\n");
 printf("************* ENTRADA 2 *******************\n");
 printf("*******************************************\n");
 % entrada 2
@@ -107,3 +119,4 @@ q = @(x) 2 * x;
 f = @(x) - 2 * (x ^ 2 + x + 1) * exp(x) * cos(x);
 
 principal(a,b,n,vj,dvjdx,p,q,f);
+
