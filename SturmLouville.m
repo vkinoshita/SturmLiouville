@@ -23,15 +23,15 @@ function principal(a,b,n,vj,dvjdx,p,q,f)
 	B = func_montar_coeficientes(a,b,n,vj,f);
 	resultado = A / B;
 	x = a:(b-a)/n:1;
-	n
-	a
-	b
-	vj
-	dvjdx
-	p
-	q
-	f
-	resultado
+	#n
+	#a
+	#b
+	#vj
+	#dvjdx
+	#p
+	#q
+	#f
+	#resultado
 
 	hold on;
 	plot(x,func_aproximada(resultado,vj,x));
