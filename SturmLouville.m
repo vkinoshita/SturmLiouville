@@ -3,24 +3,18 @@
 %PROBLEMA DE STURM-LIOUVILLE - METODO DE GALERKIN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-n = 20;
+% Definindo as entradas
 
-a = 0;
-b = pi;
+entrada = struct("n",20,"a",0,"b",pi,"l",pi-0,"y",@(x) exp(x)*sin(x));
 
-l = b - a;
+% Definindo os vjs
 
-% Definido os vjs
-
-vj = @(j, x) sin((j * pi * x) / l);
-
-dvjdx = @(j, x) j * pi * cos((j * pi * x) / l) / l;
-
-y = @(x) exp(x)*sin(x);
+vj = struct ("f",@(j, x) sin((j * pi * x) / l),"d",@(j, x) j * pi * cos((j * pi * x) / l) / l);
 
 function principal(a,b,n,vj,dvjdx,p,q,f)
 	A = func_montar_matriz(a,b,n,vj,dvjdx,p,q);
 	B = func_montar_coeficientes(a,b,n,vj,f);
+<<<<<<< HEAD
 	resultado = B / A;
 
 	A
@@ -39,7 +33,16 @@ function principal(a,b,n,vj,dvjdx,p,q,f)
 		printf("b%d = %f\n",i,resultado(i));
 	end
 	
+=======
+	resultado = B / A;	
+>>>>>>> 4abdd4ce3fcc210ef2f2720ff6b8c91d9ce01695
 	x = a:0.01:b;
+
+	printf("Coeficientes encontrados\n");
+	for i = 1:length(resultado)
+		printf("b%d = %f\n",i,resultado(i));
+	end
+	
 	hold on;
 	plot(x,func_aproximada(resultado,vj,x));
 endfunction
@@ -100,7 +103,7 @@ function resultado = func_plot_y(x)
 	end
 endfunction
 
-x = a:0.01:pi;
+x = entrada.a:0.01:pi;
 plot(x,func_plot_y(x));
 
 printf("\n*******************************************\n");
@@ -108,19 +111,16 @@ printf("************* ENTRADA 1 *******************\n");
 printf("*******************************************\n");
 
 % entrada 1
-p = @(x) 4;
-q = @(x) exp(-x);
-f = @(x) - 8 * exp(x) * cos(x) + sin(x);
 
-principal(a,b,n,vj,dvjdx,p,q,f);
+funcoes = struct("p",@(x) 4,"q",@(x) exp(-x),"f",@(x) - 8 * exp(x) * cos(x) + sin(x));
+
+principal(entrada.a,entrada.b,entrada.n,vj.f,vj.d,funcoes.p,funcoes.q,funcoes.f);
 
 printf("\n*******************************************\n");
 printf("************* ENTRADA 2 *******************\n");
 printf("*******************************************\n");
 % entrada 2
-p = @(x) 1 + x ^ 2;
-q = @(x) 2 * x;
-f = @(x) - 2 * (x ^ 2 + x + 1) * exp(x) * cos(x);
 
-principal(a,b,n,vj,dvjdx,p,q,f);
+funcoes = struct("p",@(x) 1 + x ^ 2,"q",@(x) 2 * x,"f",@(x) - 2 * (x ^ 2 + x + 1) * exp(x) * cos(x));
 
+principal(entrada.a,entrada.b,entrada.n,vj.f,vj.d,funcoes.p,funcoes.q,funcoes.f);
