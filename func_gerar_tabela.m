@@ -1,9 +1,9 @@
 function func_gerar_tabela(a,b,n,f_exata, f_aproximada,nome_arquivo)
 	dominio = a:(b-a)/n:b;
-	sol_exata = f_exata(dominio);
-	sol_aproximada = f_aproximada(dominio);
-	erro_absoluto = abs(sol_exata - sol_aproximada);
-	tabela = [dominio; sol_aproximada; sol_exata; erro_absoluto]'; #'
-	#save nome_arquivo tabela
+	solucao_exata = f_exata(dominio);
+	solucao_aproximada = f_aproximada(dominio);
+	erro_absoluto = abs(solucao_exata - solucao_aproximada);
+	tabela = [dominio; solucao_aproximada; solucao_exata; erro_absoluto]'; #'
 	save("-ascii", nome_arquivo,"tabela");
+	printf("Arquivo %s gerado com sucesso\n", nome_arquivo);
 endfunction
