@@ -1,6 +1,6 @@
 SturmLiouville
 ==============
 
-Sturm Liouville Problem.
+Problema de Sturm Liouville.
 
-Autores: Caique, Carlos, Victor
+Autores: Caique Ferreira Lima, Carlos Akutagawa Kawai, Victor Shin Kinoshita
