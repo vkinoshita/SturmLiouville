@@ -3,9 +3,11 @@
 %PROBLEMA DE STURM-LIOUVILLE - METODO DE GALERKIN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Definindo as entradas
+
 entrada = struct("n",20,"a",0,"b",pi,"l",pi-0,"y",@(x) exp(x)*sin(x));
 
-% Definido os vjs
+% Definindo os vjs
 
 vj = struct ("f",@(j, x) sin((j * pi * x) / l),"d",@(j, x) j * pi * cos((j * pi * x) / l) / l);
 
