@@ -33,7 +33,11 @@ function principal(a,b,n,vj,dvjdx,p,q,f)
 	p
 	q
 	f
-	resultado
+	
+	printf("Coeficientes encontrados\n");
+	for i = 1:length(resultado)
+		printf("b%d = %f\n",i,resultado(i));
+	end
 	
 	x = a:0.01:b;
 	hold on;
