@@ -21,11 +21,6 @@ function principal(a,b,n,vj,dvjdx,p,q,f)
 	
 	hold on;
 	plot(x,func_aproximada(resultado,vj,x));
-endfunction 
-
-function produto_interno = func_produto_interno(a,b,n,h,k)
-	funcao_a_ser_integrada = @(x) h(x)*k(x);
-	produto_interno = func_integral_simpson(a,b,n,funcao_a_ser_integrada);
 endfunction
 
 function resultado = func_aproximada(coef,vj,x)
