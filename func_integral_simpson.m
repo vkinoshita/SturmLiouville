@@ -1,10 +1,6 @@
-function integral = func_integral_simpson(_modelo_entrada, funcao_a_ser_integrada)
-	intervalo_inicio = _modelo_entrada.intervalo_inicio;
-	intervalo_fim = _modelo_entrada.intervalo_fim;
-	numero_particoes = _modelo_entrada.numero_particoes_simpson;
-
-	h = (intervalo_fim - intervalo_inicio)/numero_particoes;
-	x = intervalo_inicio:((intervalo_fim - intervalo_inicio) / numero_particoes):intervalo_fim;
+function integral = func_integral_simpson(_intervalo, numero_de_particoes, funcao_a_ser_integrada)
+	h = (_intervalo.fim - _intervalo.inicio)/numero_de_particoes;
+	x = _intervalo.inicio:((_intervalo.fim - _intervalo.inicio) / numero_de_particoes):_intervalo.fim;
 
 	for i = 2:length(x) - 1
 		if mod(i, 2) == 0

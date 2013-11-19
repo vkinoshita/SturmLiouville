@@ -1,6 +1,9 @@
-function coeficientes = func_montar_resposta_interpoladora(_modelo_entrada,_modelo_funcao_aproximadora,f)
-	for i = 1:_modelo_entrada.tamanho_da_serie
-		vj = _modelo_funcao_aproximadora.funcao;
-		coeficientes(i) = func_produto_interno(_modelo_entrada,f,@(x) vj(i,x));
+function coeficientes = func_montar_resposta_interpoladora(_informacoes_sturm_liouville)
+    _entrada = _informacoes_sturm_liouville.entrada;
+    _funcao_aproximadora = _informacoes_sturm_liouville.funcao_aproximadora;
+    f = _informacoes_sturm_liouville.funcoes_coeficientes.f;
+	for i = 1:_informacoes_sturm_liouville.tamanho_da_serie
+		v = @(x) _funcao_aproximadora.funcao(i, x);
+		coeficientes(i) = func_produto_interno(_informacoes_sturm_liouville.intervalo, f, v);
 	end
 endfunction

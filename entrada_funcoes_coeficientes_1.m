@@ -1,7 +1,7 @@
 # Funcoes coeficientes dadas pelo enunciado
 # primeiro conjunto de funcoes
 
-function funcoes = funcoes_coeficientes_1()
+function funcoes = entrada_funcoes_coeficientes_1()
 	funcoes = modelo_funcoes_coeficientes();
 
 	funcoes.p = @(x) 4;

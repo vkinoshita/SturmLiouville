@@ -1,7 +1,7 @@
 # vj aproximador dado pelo enunciado do ep
 
 # recebe o tamanho do intervado
-function vj = vj_aproximador(tamanho_do_intervalo)
+function vj = entrada_vj_aproximador(tamanho_do_intervalo)
 	funcao = modelo_funcao_aproximadora();
 
 	vj.funcao                  = @(j, x) sin((j * pi * x) / tamanho_do_intervalo);
