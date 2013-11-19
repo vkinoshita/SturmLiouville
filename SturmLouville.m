@@ -3,16 +3,17 @@
 %PROBLEMA DE STURM-LIOUVILLE - METODO DE GALERKIN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-entrada = struct("n",20,"a",0,"b",pi,"l",pi-0,"y",@(x) exp(x)*sin(x));
+entrada = entrada_principal();
 
 % Definido os vjs
 
-vj = struct ("f",@(j, x) sin((j * pi * x) / l),"d",@(j, x) j * pi * cos((j * pi * x) / l) / l);
+tamanho_do_intervalo = entrada.intervalo_fim - entrada.intervalo_inicio;
+vj = vj_aproximador(tamanho_do_intervalo);
 
 function principal(a,b,n,vj,dvjdx,p,q,f)
 	A = func_montar_matriz(a,b,n,vj,dvjdx,p,q);
 	B = func_montar_coeficientes(a,b,n,vj,f);
-	resultado = B / A;	
+	resultado = B / A;
 	x = a:0.01:b;
 
 	printf("Coeficientes encontrados\n");
@@ -80,7 +81,7 @@ function resultado = func_plot_y(x)
 	end
 endfunction
 
-x = entrada.a:0.01:pi;
+x = entrada.intervalo_inicio:0.01:pi;
 plot(x,func_plot_y(x));
 
 printf("\n*******************************************\n");
@@ -89,15 +90,15 @@ printf("*******************************************\n");
 
 % entrada 1
 
-funcoes = struct("p",@(x) 4,"q",@(x) exp(-x),"f",@(x) - 8 * exp(x) * cos(x) + sin(x));
+funcoes = funcoes_coeficientes_1();
 
-principal(entrada.a,entrada.b,entrada.n,vj.f,vj.d,funcoes.p,funcoes.q,funcoes.f);
+principal(entrada.intervalo_inicio,entrada.intervalo_fim,entrada.tamanho_da_serie,vj.funcao,vj.derivada_da_funcao_em_x,funcoes.p,funcoes.q,funcoes.f);
 
 printf("\n*******************************************\n");
 printf("************* ENTRADA 2 *******************\n");
 printf("*******************************************\n");
 % entrada 2
 
-funcoes = struct("p",@(x) 1 + x ^ 2,"q",@(x) 2 * x,"f",@(x) - 2 * (x ^ 2 + x + 1) * exp(x) * cos(x));
+funcoes = funcoes_coeficientes_2();
 
-principal(entrada.a,entrada.b,entrada.n,vj.f,vj.d,funcoes.p,funcoes.q,funcoes.f);
+principal(entrada.intervalo_inicio,entrada.intervalo_fim,entrada.tamanho_da_serie,vj.funcao,vj.derivada_da_funcao_em_x,funcoes.p,funcoes.q,funcoes.f);
