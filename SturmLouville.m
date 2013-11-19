@@ -5,12 +5,12 @@
 
 entrada = entrada_principal();
 
-tamanho_do_intervalo = entrada.intervalo_fim - entrada.intervalo_inicio;
-vj = vj_aproximador(tamanho_do_intervalo);
+tamanho_intervalo = entrada.intervalo_fim - entrada.intervalo_inicio;
+vj = vj_aproximador(tamanho_intervalo);
 
-function principal(a,b,n,vj,dvjdx,p,q,f)
-	A = func_montar_matriz_interpoladora(a,b,n,vj,dvjdx,p,q);
-	B = func_montar_resposta_interpoladora(a,b,n,vj,f);
+function principal(entrada, a,b,n,vj,dvjdx,p,q,f)
+	A = func_montar_matriz_interpoladora(entrada, vj,dvjdx,p,q);
+	B = func_montar_resposta_interpoladora(entrada,vj,f);
 	resultado = B / A;
 	x = a:0.01:b;
 
@@ -39,7 +39,7 @@ printf("*******************************************\n");
 
 funcoes = funcoes_coeficientes_1();
 
-principal(entrada.intervalo_inicio,entrada.intervalo_fim,entrada.tamanho_da_serie,vj.funcao,vj.derivada_da_funcao_em_x,funcoes.p,funcoes.q,funcoes.f);
+principal(entrada, entrada.intervalo_inicio,entrada.intervalo_fim,entrada.tamanho_da_serie,vj.funcao,vj.derivada_da_funcao_em_x,funcoes.p,funcoes.q,funcoes.f);
 
 printf("\n*******************************************\n");
 printf("************* ENTRADA 2 *******************\n");
@@ -47,4 +47,4 @@ printf("*******************************************\n");
 
 funcoes = funcoes_coeficientes_2();
 
-principal(entrada.intervalo_inicio,entrada.intervalo_fim,entrada.tamanho_da_serie,vj.funcao,vj.derivada_da_funcao_em_x,funcoes.p,funcoes.q,funcoes.f);
+principal(entrada, entrada.intervalo_inicio,entrada.intervalo_fim,entrada.tamanho_da_serie,vj.funcao,vj.derivada_da_funcao_em_x,funcoes.p,funcoes.q,funcoes.f);
