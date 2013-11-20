@@ -1,6 +1,6 @@
 # recebe um modelo do tipo modelo_informacoes_sturm_liouville
 
-function sturm_liouville(_informacoes_sturm_liouville)
+function func_sturm_liouville(_informacoes_sturm_liouville)
 	_intervalo = _informacoes_sturm_liouville.intervalo;
 	_funcao_aproximadora = _informacoes_sturm_liouville.funcao_aproximadora;
 

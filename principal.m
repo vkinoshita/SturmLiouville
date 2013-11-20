@@ -9,17 +9,17 @@ function principal()
 	printf("************* ENTRADA 1 *******************\n");
 	printf("*******************************************\n");
 
-	infos = sturm_liouville_entrada_1();
+	infos = entrada_1_principal();
 
-	sturm_liouville(infos);
+	func_sturm_liouville(infos);
 
 	printf("\n*******************************************\n");
 	printf("************* ENTRADA 2 *******************\n");
 	printf("*******************************************\n");
 
-	infos = sturm_liouville_entrada_2();
+	infos = entrada_2_principal();
 
-	sturm_liouville(infos);
+	func_sturm_liouville(infos);
 
 
 	x = infos.intervalo.inicio:infos.intervalo.tamanho/infos.intervalo.particoes_numericas:infos.intervalo.fim;

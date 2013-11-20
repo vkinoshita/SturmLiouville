@@ -1,4 +1,4 @@
-function infos = sturm_liouville_entrada_1()
+function infos = entrada_1_principal()
 	infos = modelo_informacoes_sturm_liouville();
 
 	infos.tamanho_da_serie = 5;
