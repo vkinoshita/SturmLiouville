@@ -9,20 +9,34 @@ function principal()
 	printf("************* ENTRADA 1 *******************\n");
 	printf("*******************************************\n");
 
-	infos = entrada_1_principal();
+	infos_1 = entrada_1_principal();
 
-	func_sturm_liouville(infos);
+	coeficientes_1 = func_sturm_liouville(infos_1);
+
+	printf("Coeficientes encontrados\n");
+	for i = 1:length(coeficientes_1)
+		printf("b%d = %f\n",i,coeficientes_1(i));
+	end
+
+	vj_1 = infos_1.funcao_aproximadora.funcao;
+
+	f_aproximada_1 = @ (x) func_funcao_aproximada(coeficientes_1,vj_1,x);
+	func_gerar_tabela(infos_1.intervalo, 100, infos_1.funcao_exata,f_aproximada_1, "aproximacao_1.txt");
+	func_gerar_grafico_de_comparacao(infos_1.intervalo, infos_1.funcao_exata, f_aproximada_1,"aproximacao com funcoes do tipo 1", "aproximacao_grafico_1.png");
+
 
 	printf("\n*******************************************\n");
 	printf("************* ENTRADA 2 *******************\n");
 	printf("*******************************************\n");
 
-	infos = entrada_2_principal();
+	infos_2 = entrada_2_principal();
 
-	func_sturm_liouville(infos);
+	coeficientes_2 = func_sturm_liouville(infos_2);
 
+	vj_2 = infos_2.funcao_aproximadora.funcao;
 
-	x = infos.intervalo.inicio:infos.intervalo.tamanho/infos.intervalo.particoes_numericas:infos.intervalo.fim;
-	plot(x,infos.funcao_exata(x));
+	f_aproximada_2 = @ (x) func_funcao_aproximada(coeficientes_2,vj_2,x);
+	func_gerar_tabela(infos_2.intervalo, 100, infos_2.funcao_exata,f_aproximada_2, "aproximacao_2.txt");
+	func_gerar_grafico_de_comparacao(infos_2.intervalo, infos_2.funcao_exata, f_aproximada_2,"aproximacao com funcoes do tipo 2", "aproximacao_grafico_2.png");
 
 endfunction
