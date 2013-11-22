@@ -17,3 +17,5 @@ Autores: Caique Ferreira Lima, Carlos Akutagawa Kawai, Victor Shin Kinoshita
 * Todas as funções são reaproveitáveis basta respeitar as estruturas de dados.
 
 * Para fazer sua própria interpolação, crie um modelo do tipo modelo_informacoes_sturm_liouville, e passe esse modelo como parâmetro na função func_sturm_liouville({modelo}). siga o exemplo do entrada_1_principal.m
+
+* Chame (ou modifique) func_gerador_de_dados para gerar mais dados. Todos os arquivos serão salvados na pasta "dados".
