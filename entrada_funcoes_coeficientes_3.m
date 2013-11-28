@@ -2,7 +2,7 @@
 # terceiro conjunto de funcoes
 # p e q inventados
 
-function funcoes = entrada_funcoes_coeficientes_2()
+function funcoes = entrada_funcoes_coeficientes_3()
 	funcoes = modelo_funcoes_coeficientes();
 
 	funcoes.p = @(x) 1 + x ^ 2;

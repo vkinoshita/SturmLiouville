@@ -6,5 +6,5 @@ function intervalo = entrada_intervalo_a_ser_interpolado()
 	intervalo.tamanho = pi - 0;
 
 	# contempla particoes pra plot e integracao de simpson
-	intervalo.particoes_numericas = 20;
+	intervalo.particoes_numericas = 42;
 endfunction
