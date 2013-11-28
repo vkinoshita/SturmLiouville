@@ -7,7 +7,7 @@ function func_gerar_multiplos_relatorios()
 	for mult_tamanho_da_serie = 1:max_tamanho_da_serie
 		for mult_particoes_simpson = 1:max_particoes_simpson
 			tamanho_da_serie = 5 * mult_tamanho_da_serie;
-			particoes_simpson = 5 * mult_particoes_simpson;
+			particoes_simpson = 6 * mult_particoes_simpson;
 
 			printf("\nTamanho da serie = %d\n", tamanho_da_serie);
 			printf("Particoes de Simpson = %d\n", particoes_simpson);
