@@ -18,4 +18,4 @@ Autores: Caique Ferreira Lima, Carlos Akutagawa Kawai, Victor Shin Kinoshita
 
 * Para fazer sua própria interpolação, crie um modelo do tipo modelo_informacoes_sturm_liouville, e passe esse modelo como parâmetro na função func_sturm_liouville({modelo}). siga o exemplo do entrada_1_principal.m
 
-* Chame (ou modifique) func_gerador_de_dados para gerar mais dados. Todos os arquivos serão salvados na pasta "dados".
+* Chame (ou modifique) func_gerar_multiplos_relatorios para gerar mais dados. Todos os arquivos serão salvados na pasta "relatorios".

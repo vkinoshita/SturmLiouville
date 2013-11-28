@@ -18,15 +18,7 @@ function principal()
 		printf("b%d = %f\n",i,coeficientes_1(i));
 	end
 
-	vj_1 = infos_1.funcao_aproximadora.funcao;
-
-	f_aproximada_1 = @ (x) func_funcao_aproximada(coeficientes_1,vj_1,x);
-	func_gerar_tabela(infos_1.intervalo, 100, infos_1.funcao_exata,f_aproximada_1, "aproximacao_1.txt");
-	func_gerar_grafico_de_comparacao(infos_1.intervalo, infos_1.funcao_exata, f_aproximada_1,
-		"aproximacao com funcoes do tipo 1", 
-		sprintf("Tamanho da serie = %d, particoes para a integral de simpson = %d", infos_1.funcao_aproximadora.tamanho_da_serie, infos_1.intervalo.particoes_numericas),
-		"aproximacao_grafico_1.png");
-
+	func_gerar_relatorio_de_grafico_e_tabela(infos_1,coeficientes_1,"interpolacao_tipo_1", "Interpolacao com funcoes do tipo 1");
 
 	printf("\n*******************************************\n");
 	printf("************* ENTRADA 2 *******************\n");
@@ -41,13 +33,6 @@ function principal()
 		printf("b%d = %f\n",i,coeficientes_2(i));
 	end
 
-	vj_2 = infos_2.funcao_aproximadora.funcao;
-
-	f_aproximada_2 = @ (x) func_funcao_aproximada(coeficientes_2,vj_2,x);
-	func_gerar_tabela(infos_2.intervalo, 100, infos_2.funcao_exata,f_aproximada_2, "aproximacao_2.txt");
-	func_gerar_grafico_de_comparacao(infos_2.intervalo, infos_2.funcao_exata, f_aproximada_2,
-		"aproximacao com funcoes do tipo 2", 
-		sprintf("Tamanho da serie = %d, particoes para a integral de simpson = %d", infos_2.funcao_aproximadora.tamanho_da_serie, infos_2.intervalo.particoes_numericas),
-		"aproximacao_grafico_2.png");
+	func_gerar_relatorio_de_grafico_e_tabela(infos_2,coeficientes_2,"interpolacao_tipo_2", "Interpolacao com funcoes do tipo 2");
 
 endfunction

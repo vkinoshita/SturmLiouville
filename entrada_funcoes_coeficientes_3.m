@@ -1,5 +1,6 @@
 # Funcoes coeficientes dadas pelo enunciado
-# segundo conjunto de funcoes
+# terceiro conjunto de funcoes
+# p e q inventados
 
 function funcoes = entrada_funcoes_coeficientes_2()
 	funcoes = modelo_funcoes_coeficientes();
