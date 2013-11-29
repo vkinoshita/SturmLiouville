@@ -1,3 +1,5 @@
+# modelo de dados de um intervalo
+
 function modelo = modelo_intervalo()
 	modelo = struct(
 		"inicio"             , 0,

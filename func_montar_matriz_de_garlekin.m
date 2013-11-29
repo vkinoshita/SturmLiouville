@@ -1,4 +1,6 @@
-function matriz_normal = func_montar_matriz_interpoladora(_informacoes_sturm_liouville)
+# monta a matriz de garlekin
+
+function matriz_normal = func_montar_matriz_de_garlekin(_informacoes_sturm_liouville)
 	p = _informacoes_sturm_liouville.funcoes_coeficientes.p;
 	q = _informacoes_sturm_liouville.funcoes_coeficientes.q;
 	vj = _informacoes_sturm_liouville.funcao_aproximadora.funcao;

@@ -1,3 +1,5 @@
+# entrada com todas as informacoes do item 1
+
 function infos = entrada_1_principal()
 	infos = modelo_informacoes_sturm_liouville();
 

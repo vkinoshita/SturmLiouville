@@ -1,3 +1,5 @@
+# solucao da integral de simpson
+
 function integral = func_integral_simpson(_intervalo, funcao_a_ser_integrada)
 	dominio_de_integracao = linspace(_intervalo.inicio, _intervalo.fim, _intervalo.particoes_numericas + 1);
 

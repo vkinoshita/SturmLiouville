@@ -1,3 +1,5 @@
+# gera um grafico e uma tabela a partir da funcao interpolada
+
 function func_gerar_relatorio_de_grafico_e_tabela(_informacoes_sturm_liouville, coeficientes, nome_arquivo_sem_sufixo_e_sem_extensao, titulo_grafico)
 	tamanho_da_serie = _informacoes_sturm_liouville.funcao_aproximadora.tamanho_da_serie;
 	particoes_simpson = _informacoes_sturm_liouville.intervalo.particoes_numericas;	

@@ -1,3 +1,6 @@
+# gera a tabela com as quatro colunas: dominio, valores exatos, valores interpolados e o erro absoluto
+# para o passo 42 de simpson, todos dão um erro menor que e-003
+
 function func_gerar_tabela_relatorio(_intervalo,numero_de_comparacoes,f_exata, f_aproximada, nome_arquivo)
 	dominio = _intervalo.inicio:(_intervalo.fim-_intervalo.inicio)/numero_de_comparacoes:_intervalo.fim;
 	solucao_exata = f_exata(dominio);

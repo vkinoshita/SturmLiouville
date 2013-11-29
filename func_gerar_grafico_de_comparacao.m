@@ -1,3 +1,5 @@
+# gera um grafico com a funcao exata e a funcao interpolada
+
 function func_gerar_grafico_de_comparacao(_intervalo,f1,f2,titulo,descricao,nome_arquivo)
 	clf();
 	hold on;

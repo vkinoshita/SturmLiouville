@@ -1,3 +1,5 @@
+# gera varios relatorios com passos de simpson e tamanhos de series diferentes ate a aproximacao final
+
 function func_gerar_multiplos_relatorios()
 	mkdir("relatorios");
 
@@ -25,6 +27,13 @@ function func_gerar_multiplos_relatorios()
 			infos_2.intervalo.particoes_numericas = particoes_simpson;
 			coeficientes_2 = func_sturm_liouville(infos_2);
 			func_gerar_relatorio_de_grafico_e_tabela(infos_2, coeficientes_2,"relatorios/interpolacao_tipo_2", "Interpolacao tipo 2");
+
+			printf("* ENTRADA 3\nGerando relatorios...\n");
+			infos_3 = entrada_3_principal();
+			infos_3.funcao_aproximadora.tamanho_da_serie = tamanho_da_serie;
+			infos_3.intervalo.particoes_numericas = particoes_simpson;
+			coeficientes_3 = func_sturm_liouville(infos_3);
+			func_gerar_relatorio_de_grafico_e_tabela(infos_3, coeficientes_3,"relatorios/interpolacao_tipo_3", "Interpolacao tipo 3");
 		end
 
 	end

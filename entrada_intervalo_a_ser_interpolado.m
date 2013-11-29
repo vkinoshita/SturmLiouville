@@ -1,3 +1,5 @@
+# o intervalo que será interpolado
+
 function intervalo = entrada_intervalo_a_ser_interpolado()
 	intervalo = modelo_intervalo();
 

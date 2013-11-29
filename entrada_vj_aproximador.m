@@ -1,4 +1,5 @@
 # vj aproximador dado pelo enunciado do ep
+# sin(j * x ...
 
 # recebe o tamanho do intervado
 function vj = entrada_vj_aproximador(tamanho_do_intervalo)

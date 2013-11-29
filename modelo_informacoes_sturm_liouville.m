@@ -1,3 +1,6 @@
+# modelo de todas as informacoes necessarias para realizar
+# a sturm liouville
+
 function modelo = modelo_informacoes_sturm_liouville()
 	modelo = struct(
 		"funcao_exata"        , @(x) 0,
