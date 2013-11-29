@@ -26,7 +26,7 @@ function principal()
 		printf("b%d = %f\n",i,coeficientes_1(i));
 	end
 
-	func_gerar_relatorio_de_grafico_e_tabela(infos_1,coeficientes_1,"interpolacao_tipo_1", "Interpolacao com funcoes do tipo 1");
+	#func_gerar_relatorio_de_grafico_e_tabela(infos_1,coeficientes_1,"interpolacao_tipo_1", "Interpolacao com funcoes do tipo 1");
 
 
 	# Realiza o sturm liouville para os dados do item 2
@@ -44,7 +44,7 @@ function principal()
 		printf("b%d = %f\n",i,coeficientes_2(i));
 	end
 
-	func_gerar_relatorio_de_grafico_e_tabela(infos_2,coeficientes_2,"interpolacao_tipo_2", "Interpolacao com funcoes do tipo 2");
+	#func_gerar_relatorio_de_grafico_e_tabela(infos_2,coeficientes_2,"interpolacao_tipo_2", "Interpolacao com funcoes do tipo 2");
 
 
 	# Realiza o sturm liouville para os dados do item 3
@@ -62,7 +62,7 @@ function principal()
 		printf("b%d = %f\n",i,coeficientes_3(i));
 	end
 
-	func_gerar_relatorio_de_grafico_e_tabela(infos_3,coeficientes_3,"interpolacao_tipo_3", "Interpolacao com funcoes do tipo 3");
+	#func_gerar_relatorio_de_grafico_e_tabela(infos_3,coeficientes_3,"interpolacao_tipo_3", "Interpolacao com funcoes do tipo 3");
 
 
 endfunction

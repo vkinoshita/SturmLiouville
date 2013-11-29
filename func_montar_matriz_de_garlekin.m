@@ -9,12 +9,10 @@ function matriz_normal = func_montar_matriz_de_garlekin(_informacoes_sturm_liouv
 	_intervalo = _informacoes_sturm_liouville.intervalo;
 
 	for i = 1:tamanho_da_serie
-		for j = 1:tamanho_da_serie
-			dvj_dvi = @(x) dvjdx(j,x)*dvjdx(i,x);
-			matriz_normal(i, j) = func_produto_interno(_intervalo,p, dvj_dvi);
-
-			vj_vi = @(x) vj(j,x)*vj(i,x);
-			matriz_normal(i, j) += func_produto_interno(_intervalo,q,vj_vi);
+		for j = i:tamanho_da_serie
+			funcao_a_ser_integrada = @(x) p(x).*dvjdx(j,x).*dvjdx(i,x) + q(x).*vj(j,x).*vj(i,x);
+			matriz_normal(i, j) = func_integral_simpson(_intervalo,funcao_a_ser_integrada);
+			matriz_normal(j, i) = matriz_normal(i, j);
 		end
 	end
 endfunction
